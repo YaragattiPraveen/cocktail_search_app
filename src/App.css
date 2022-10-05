@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Poppins:wght@500;600;700;800&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 body{
   background-color: rgba(164, 206, 243, 0.719);
   background-image: linear-gradient(135deg, #81FFEF 10%, #F067B4 100%);
+  font-family: 'Nunito', sans-serif;
   /* background-image: linear-gradient(135deg, #00416A 10%, #E4E5E6 100%); */
 }
 .App {
@@ -22,6 +25,7 @@ body{
 .App h1{
   color: #ffffff;
   margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .center_container{
@@ -47,24 +51,40 @@ body{
   border-radius: 10px;
   text-align: center;
   position: relative;
+  cursor: pointer;
+}
+.center_container .card:hover{
+  background-color: #f0f8f4;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .center_container .card h3{
-  padding: 30px 0 0 0;
+  padding: 30px 0 10px 0;
+  color: #04545a;
+  font-family: 'Poppins', sans-serif;
 }
 .center_container .card p{
-  padding: 0px 20px 30px 20px;
-  font-size: 13px;
+  padding: 0px 25px 30px 25px;
+  font-size: 14px;
+  color: #697472;
 }
 .center_container .card button{
   position: absolute;
   top: 5px;
   right: 10px;
   border-radius: 50%;
-  padding: 3px;
+  padding: 3px 4px;
+  font-size: .7rem;
+  font-weight: bold;
   cursor: pointer;
+  border: 1.5px solid gray;
+  color: #858f8dec;
+  transition: .5s all ease-in-out;
 }
 .center_container button:hover{
-  background-color: rgb(255, 81, 0);
+  color: #ffffff;
+  background-color: red;
+  border: 1.5px solid red;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 form{
@@ -119,6 +139,7 @@ form button:hover{
 }
 .card_container .details_card h4{
   margin: 0 auto 5px 0;
+  font-family: 'Poppins', sans-serif;
 }
 .card_container .details_card img{
   height: 260px;
