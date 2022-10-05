@@ -3,7 +3,7 @@ import React from 'react'
 function Visibility(props) {
     return (
         <>
-            <div style={{ display: `${props.visibility}` }} className='center_container'>
+            <div className='center_container'>
                 <div className='card'>
                     <h3>{props.title}</h3>
                     <button onClick={props.hide}>X</button>

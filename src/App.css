@@ -10,7 +10,7 @@ body{
 }
 .App {
   text-align: center;
-  position: relative;
+  /* position: relative; */
   background-image: linear-gradient(to bottom, rgba(13, 13, 14, 0.52),
    rgba(17, 2, 3, 0.274)), url('../images/bg.jpg');
   height: 100vh;
@@ -29,17 +29,18 @@ body{
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.726);
   transition: all .6s ease-in-out;
 }
 .center_container .card{
   height: auto;
   width: 300px;
-  margin: 150px auto;
+  margin: 0px auto;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all .6s ease-in-out;
@@ -104,6 +105,7 @@ form button:hover{
   margin: 0 auto;
   gap: 12px;
   padding: 20px 0 30px 0;
+  position: relative;
 }
 .card_container .details_card{
   width: 260px;

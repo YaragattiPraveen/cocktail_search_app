@@ -5,13 +5,14 @@ import Visibility from './components/Visibility';
 import axios from 'axios';
 
 function App() {
-  const [visibility, setvisibility] = useState('none')
+  const [visibility, setvisibility] = useState(false)
   const [search, setsearch] = useState("")
   const [cocktailList, setcocktailList] = useState([])
+  const [tempData, settempData] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchCocktailName() // eslint-disable-next-line
-  },[])
+  }, [])
 
 
   const fetchCocktailName = async () => {
@@ -25,11 +26,13 @@ function App() {
     }
   }
 
-  const setDisplays = () => {
-    setvisibility('unset')
+  const setDisplays = (title, desc) => {
+    let tempData = [title, desc]
+    settempData(item => [1, ...tempData])
+    return setvisibility(true)
   }
   const removeDisplay = () => {
-    setvisibility('none')
+    setvisibility(false)
   }
 
 
@@ -54,13 +57,15 @@ function App() {
                     <p>Alcoholic : <span>{val.strAlcoholic}</span></p>
                     <p>Category : <span>{val.strCategory}</span></p>
                   </div>
-                  <button className='btn' onClick={setDisplays}>More Info..</button>
-                  <Visibility visibility={visibility} hide={removeDisplay} 
-                    title={val.strDrink} description={val.strInstructions}
-                  />
+                  <button className='btn' onClick={() => setDisplays(val.strDrink, val.strInstructions)}>More Info..</button>
                 </div>
               )
             })
+          }
+          {
+            visibility === true && <Visibility hide={removeDisplay}
+              title={tempData[1]} description={tempData[2]}
+            />
           }
         </div>
       </div>
